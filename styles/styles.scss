@@ -1,0 +1,89 @@
+$primary-color: #ffc87a;
+$text-color: #1a2b5f;
+$text-gray: #c6cad7;
+a {
+    margin: 0;
+    padding: 0;
+}
+@mixin flex(
+  $align: flex-start,
+  $justify: flex-start,
+  $wrap: nowrap,
+  $dir: row
+) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+  flex-direction: $dir;
+}
+html {
+    font-size: 62.5%; // 1rem = 10px
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+  a {
+    text-decoration: none;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  body {
+    font-family: "Poppins", sans-serif;
+    color: $text-color;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+
+  .wrapper {
+      max-width: 1440px;
+      margin: 0 auto;
+  }
+
+  .container {
+      margin: 0 auto;
+      max-width: 1210px;
+      padding: 0 2rem;
+  }
+
+  .header {
+      padding-top: 4rem;
+      &__inner {
+        @include flex(center, space-between);
+      }
+      &__menu {
+          &-list {
+              @include flex(center);
+          }
+          &-item {
+              margin-left: 5rem;
+              &:last-child {
+                  margin-left: 7rem;
+              }
+          }
+          &-link {
+              font-size: 1.6rem;
+              color: $text-color;
+          }
+      }
+      &__login {
+          padding: 1.5rem 2.5rem;
+          display: inline-block;
+          border: 1px solid;
+          border-radius: 2.5rem;
+      }
+  }
+
+  .logo {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: $text-color;
+      &__text {
+          color: $primary-color;
+      }
+  }
